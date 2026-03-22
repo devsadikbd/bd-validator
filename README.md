@@ -2,10 +2,6 @@
 
 A lightweight, zero-dependency utility library for validating Bangladeshi data — phone numbers, NID, TIN, passport, postal codes, and bank accounts.
 
-[![npm version](https://img.shields.io/npm/v/bd-validator.svg)](https://www.npmjs.com/package/bd-validator)
-[![npm downloads](https://img.shields.io/npm/dm/bd-validator.svg)](https://www.npmjs.com/package/bd-validator)
-[![license](https://img.shields.io/npm/l/bd-validator.svg)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 
 ---
 
