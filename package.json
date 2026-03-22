@@ -1,5 +1,5 @@
 {
-  "name": "bd-validator",
+  "name": "@devsadikbd/bd-validator",
   "version": "1.0.0",
   "description": "A utility library for validating Bangladeshi phone numbers, NID, TIN, passport, postal codes and bank accounts.",
   "main": "dist/index.js",

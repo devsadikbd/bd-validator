@@ -38,41 +38,47 @@ pnpm add bd-validator
 ## Usage
 
 ```typescript
-import { isValidPhone, formatPhone, getOperator, isValidNID, validate } from 'bd-validator';
+import {
+  isValidPhone,
+  formatPhone,
+  getOperator,
+  isValidNID,
+  validate,
+} from "bd-validator";
 
 // Phone validation
-isValidPhone('01711234567')        // true
-isValidPhone('+8801711234567')     // true
-isValidPhone('01211234567')        // false (invalid prefix)
+isValidPhone("01711234567"); // true
+isValidPhone("+8801711234567"); // true
+isValidPhone("01211234567"); // false (invalid prefix)
 
 // Format phone
-formatPhone('01711234567')         // '+8801711234567'
+formatPhone("01711234567"); // '+8801711234567'
 
 // Detect operator
-getOperator('01711234567')         // 'Grameenphone'
-getOperator('01911234567')         // 'Banglalink'
-getOperator('01511234567')         // 'Teletalk'
-getOperator('01611234567')         // 'Robi'
+getOperator("01711234567"); // 'Grameenphone'
+getOperator("01911234567"); // 'Banglalink'
+getOperator("01511234567"); // 'Teletalk'
+getOperator("01611234567"); // 'Robi'
 
 // NID validation
-isValidNID('1234567890')           // true (10-digit)
-isValidNID('1234567890123')        // true (13-digit old format)
-isValidNID('12345678901234567')    // true (17-digit new format)
+isValidNID("1234567890"); // true (10-digit)
+isValidNID("1234567890123"); // true (13-digit old format)
+isValidNID("12345678901234567"); // true (17-digit new format)
 
 // TIN
-isValidTIN('123456789012')         // true
+isValidTIN("123456789012"); // true
 
 // Postal code
-isValidPostalCode('1216')          // true
+isValidPostalCode("1216"); // true
 
 // Passport
-isValidPassport('AB1234567')       // true
+isValidPassport("AB1234567"); // true
 
 // Bank account
-isValidBankAccount('1234567890123') // true
+isValidBankAccount("1234567890123"); // true
 
 // Generic validate function
-const result = validate('01711234567', 'phone');
+const result = validate("01711234567", "phone");
 // {
 //   valid: true,
 //   type: 'phone',
@@ -87,11 +93,11 @@ const result = validate('01711234567', 'phone');
 
 ### Phone
 
-| Function | Description | Returns |
-|---|---|---|
-| `isValidPhone(phone)` | Validates BD mobile number | `boolean` |
-| `formatPhone(phone)` | Formats to `+880XXXXXXXXXX` | `string \| null` |
-| `getOperator(phone)` | Returns operator name | `string \| null` |
+| Function              | Description                 | Returns          |
+| --------------------- | --------------------------- | ---------------- |
+| `isValidPhone(phone)` | Validates BD mobile number  | `boolean`        |
+| `formatPhone(phone)`  | Formats to `+880XXXXXXXXXX` | `string \| null` |
+| `getOperator(phone)`  | Returns operator name       | `string \| null` |
 
 **Supported operators:** Grameenphone, Banglalink, Robi, Airtel (Robi), Teletalk
 
@@ -101,21 +107,21 @@ const result = validate('01711234567', 'phone');
 
 ### NID
 
-| Function | Description | Returns |
-|---|---|---|
-| `isValidNID(nid)` | Validates NID (10/13/17 digits) | `boolean` |
-| `getNIDType(nid)` | Returns `'old'` or `'new'` | `'old' \| 'new' \| null` |
+| Function          | Description                     | Returns                  |
+| ----------------- | ------------------------------- | ------------------------ |
+| `isValidNID(nid)` | Validates NID (10/13/17 digits) | `boolean`                |
+| `getNIDType(nid)` | Returns `'old'` or `'new'`      | `'old' \| 'new' \| null` |
 
 ---
 
 ### Other Validators
 
-| Function | Description | Returns |
-|---|---|---|
-| `isValidTIN(tin)` | Validates 12-digit TIN | `boolean` |
-| `isValidPostalCode(code)` | Validates 4-digit postal code | `boolean` |
-| `isValidPassport(passport)` | Validates BD passport (e.g. AB1234567) | `boolean` |
-| `isValidBankAccount(account)` | Validates 13–17 digit bank account | `boolean` |
+| Function                      | Description                            | Returns   |
+| ----------------------------- | -------------------------------------- | --------- |
+| `isValidTIN(tin)`             | Validates 12-digit TIN                 | `boolean` |
+| `isValidPostalCode(code)`     | Validates 4-digit postal code          | `boolean` |
+| `isValidPassport(passport)`   | Validates BD passport (e.g. AB1234567) | `boolean` |
+| `isValidBankAccount(account)` | Validates 13–17 digit bank account     | `boolean` |
 
 ---
 
